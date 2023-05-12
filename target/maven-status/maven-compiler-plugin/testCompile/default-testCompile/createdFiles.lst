@@ -1,0 +1,4 @@
+WEB_API\UploadFileStepDefinitions.class
+WEB_API\RunCucumberTest.class
+WEB_API\DeleteFileStepDefinitions.class
+WEB_API\GetMetadataStepDefinitions.class
