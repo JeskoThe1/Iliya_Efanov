@@ -2,7 +2,6 @@ package WEB_API;
 
 import DropBoxApi.DropBoxClient;
 import URI.Config;
-import com.dropbox.core.DbxException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,17 +32,11 @@ public class GetMetadataStepDefinitions {
 
     @When("I get file's meta data")
     public void getMetaData(){
-        try {
-            response = DropBoxClient.getMetaData(Config.DROPBOX_FILEPATH);
-            Assertions.assertTrue(DropBoxClient.isSuccessful(response));
-        } catch (DbxException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        response = DropBoxClient.getMetaData(Config.DROPBOX_FILEPATH);
+        Assertions.assertTrue(DropBoxClient.isSuccessful(response));
     }
 
-    @Then("I check if I recieved file's data")
+    @Then("I check if I received file's data")
     public void isMetaDataRight(){
         try {
             HttpEntity metaData = response.getEntity();
@@ -54,6 +47,5 @@ public class GetMetadataStepDefinitions {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

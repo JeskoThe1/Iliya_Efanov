@@ -1,7 +1,7 @@
 package URI;
 
 public class Config {
-    public static final String ACCESS_TOKEN = "sl.BeM40KOU6Jc1kHrxdEhOj9PTD3VejjwmMtQl7f8hzn8rvNv1Guljyj_At3YCiFTJzY2j1ToqGS_PGvrTC6_ng6aKxC2cmZG4LTGXfVgF1Vva6S5btKep7OOuHbRcjfxYCZXSldI";
+    public static final String ACCESS_TOKEN = "sl.Bemgf8rO_L5Px9wkx1QaDAW3CCr7CnO8wyfr-iDL7n-BCzHN0gu8PELr5f0WXSKkWHEpn56SD6cVtyh1Dz3FWyfWOlaaChZ0McoIxJMl4TyrEE7JCMGlfe0LOpBOwAc5ilUlt80";
     public static final String UPLOAD = "https://content.dropboxapi.com/2/files/upload";
     public static final String METADATA = "https://api.dropboxapi.com/2/files/get_metadata";
     public static final String DELETE = "https://api.dropboxapi.com/2/files/delete_v2";

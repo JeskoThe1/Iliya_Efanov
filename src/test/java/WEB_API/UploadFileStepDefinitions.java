@@ -2,17 +2,14 @@ package WEB_API;
 
 import DropBoxApi.DropBoxClient;
 import URI.Config;
-import com.dropbox.core.DbxException;
-import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,7 +17,7 @@ import java.io.IOException;
 
 public class UploadFileStepDefinitions {
     private HttpResponse response;
-    @BeforeAll
+
     @Given("file {string} exists")
     public void fileExists(String fileName) {
         try {
@@ -31,17 +28,11 @@ public class UploadFileStepDefinitions {
             throw new RuntimeException(e);
         }
     }
-    @Before
-    @When("i upload file")
+
+    @Then("i upload file")
     public void uploadFile(){
-        try {
-            response = DropBoxClient.uploadFile(Config.FILE_PATH, Config.DROPBOX_FILEPATH);
-            Assertions.assertTrue(DropBoxClient.isSuccessful(response));
-        } catch (DbxException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        response = DropBoxClient.uploadFile(Config.FILE_PATH, Config.DROPBOX_FILEPATH);
+        Assertions.assertTrue(DropBoxClient.isSuccessful(response));
     }
 
     @Then("i check if file {string} is uploaded")

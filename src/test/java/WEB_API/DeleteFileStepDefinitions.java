@@ -2,7 +2,6 @@ package WEB_API;
 
 import DropBoxApi.DropBoxClient;
 import URI.Config;
-import com.dropbox.core.DbxException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,14 +31,8 @@ public class DeleteFileStepDefinitions {
 
     @When("I delete file")
     public void deleteFile(){
-        try {
-            response = DropBoxClient.deleteFile(Config.DROPBOX_FILEPATH);
-            Assertions.assertTrue(DropBoxClient.isSuccessful(response));
-        } catch (DbxException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        response = DropBoxClient.deleteFile(Config.DROPBOX_FILEPATH);
+        Assertions.assertTrue(DropBoxClient.isSuccessful(response));
     }
 
     @Then("I check if file is deleted")
