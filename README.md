@@ -1,4 +1,4 @@
-This code implements comunication with dropbox to upload file there and therefore delete it. Testing were implemented via framework Cucumber.
+This code implements comunication with dropbox to upload file there, get metadata of it and therefore delete it. Testing were implemented via framework Cucumber.
 
 DropBoxClient makes communication with api, using RequestBuilder you can config the request before sending it.
 
