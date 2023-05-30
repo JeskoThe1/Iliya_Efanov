@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginMenuPage extends Page{
-    private static By passwordInputButton = By.xpath("//input[@name = 'password']");
-    private static By loginInputButton = By.xpath("//input[@name = 'username']");
-    private static By submitButton = By.xpath("//button[@type = 'submit']");
+    private By passwordInputButton = By.xpath("//input[@name = 'password']");
+    private By loginInputButton = By.xpath("//input[@name = 'username']");
+    private By submitButton = By.xpath("//button[@type = 'submit']");
     public LoginMenuPage(WebDriver webDriver) {
         super(webDriver);
     }

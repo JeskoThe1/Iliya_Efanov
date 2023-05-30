@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 
 public class SideBarMenuPage extends Page {
-    private static By adminButton = By.xpath("//a[@href  = '/web/index.php/admin/viewAdminModule']");
+    private By adminButton = By.xpath("//a[@href  = '/web/index.php/admin/viewAdminModule']");
     public SideBarMenuPage(WebDriver webDriver) {
         super(webDriver);
     }

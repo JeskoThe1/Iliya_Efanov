@@ -3,15 +3,16 @@ package Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class AdminMenuPage extends Page{
     public AdminMenuPage(WebDriver webDriver) {
         super(webDriver);
     }
-    private static By jobMenuButton = By.xpath("//*[text() = 'Job ']");
-    private static By jobTitlesButton = By.xpath("//*[text() = 'Job Titles']");
-    private static By addJobButton = By.xpath("//button[text() = ' Add ']");
-    private static By acceptDeleteButton = By.xpath("//button[text() = ' Yes, Delete ']");
+    private By jobMenuButton = By.xpath("//*[text() = 'Job ']");
+    private By jobTitlesButton = By.xpath("//*[text() = 'Job Titles']");
+    private By addJobButton = By.xpath("//button[text() = ' Add ']");
+    private By acceptDeleteButton = By.xpath("//button[text() = ' Yes, Delete ']");
 
     public AdminMenuPage jobButton()
     {
@@ -44,14 +45,8 @@ public class AdminMenuPage extends Page{
 
     public Boolean isElementExist(String str)
     {
-        try
-        {
-            driver.findElement(By.xpath("//div[text() = " +"\"" + str + "\"" + "]"));
-            return true;
-        }
-        catch (NoSuchElementException ex)
-        {
+        if(driver.findElements(By.xpath("//div[text() = " + "\"" + str + "\"" + "]")).isEmpty())
             return false;
-        }
+        return true;
     }
 }

@@ -9,10 +9,10 @@ public class AddJobPage extends Page{
         super(webDriver);
     }
 
-    private static By addJobName = By.xpath("//div[2]/input[@class = 'oxd-input oxd-input--active' ]");
-    private static By addJobDescription = By.xpath("//textarea[@placeholder = 'Type description here']");
-    private static By addNode = By.xpath("//textarea[@placeholder = 'Add note']");
-    private static By saveButton = By.xpath("//button[text() = ' Save ']");
+    private By addJobName = By.xpath("//div[2]/input[@class = 'oxd-input oxd-input--active' ]");
+    private By addJobDescription = By.xpath("//textarea[@placeholder = 'Type description here']");
+    private By addNode = By.xpath("//textarea[@placeholder = 'Add note']");
+    private By saveButton = By.xpath("//button[text() = ' Save ']");
 
 
     public AddJobPage addJobName(String  str)
